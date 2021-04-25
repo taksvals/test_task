@@ -33,10 +33,11 @@ function start() {
     let str = prompt("Enter your string:", ""); 
     let numChar = prompt("Enter number of characters:", ""); 
     
-    if (numChar > str.length || isNaN(numChar)){
+    if (numChar > str.length || isNaN(numChar) || !str.match(/^[0-9a-zA-Z]+$/)){
         alert("Incorrect input. Try again.");
         start();
     } else {
+        str = str.toLowerCase();
         let result = fraq(numChar, str);
 
         for (let [key, value] of result) {
