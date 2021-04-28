@@ -1,5 +1,6 @@
 function fraq(num, str) {
     str = str.replace(/\s+/g, '');
+    str = str.toLowerCase();
     let allFraq = new Map();
     let resFraq = new Map();
     allFraq.set(str.substring(0, +num), 1);
@@ -37,7 +38,6 @@ function start() {
         alert("Incorrect input. Try again.");
         start();
     } else {
-        str = str.toLowerCase();
         let result = fraq(numChar, str);
 
         for (let [key, value] of result) {
